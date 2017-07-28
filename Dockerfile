@@ -30,7 +30,7 @@ RUN apt-get update && apt-get -y install build-essential
 
 WORKDIR /perl-5.14.4
 
-RUN mkdir -p bin lib man # fix "Can't open file /opt/perl-5.14.4/lib/5.14.4/x86_64-linux/.packlist: No such file or directory at installman line 205"
+RUN mkdir -p /opt/perl-5.14.4/{bin,lib,man} # fix "Can't open file /opt/perl-5.14.4/lib/5.14.4/x86_64-linux/.packlist: No such file or directory at installman line 205"
 RUN make install -j $(nproc)
 
 FROM debian:wheezy as release
