@@ -45,3 +45,5 @@ RUN apt-get update && apt-get install -y build-essential
 
 ENV PERL_MM_USE_DEFAULT 1
 RUN /opt/perl5/bin/cpan App::cpanminus
+
+# fix Jenkins bug
